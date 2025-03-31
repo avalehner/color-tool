@@ -9,6 +9,9 @@ const lightenText = document.getElementById('lighten-text')
 const darkenText = document.getElementById('darken-text')
 const toggleBtn = document.getElementById('toggle-btn')
 
+const strippedHex = hexInput.value.replace('#', '')
+alteredColorText.textContent = `Altered Color #${strippedHex}`
+
 // event listeners 
 hexInput.addEventListener('keyup',() => {
   //removes '#'
@@ -33,7 +36,7 @@ slider.addEventListener('input', () => {
 
   const alteredHex = alterColor(hexInput.value, percentageChange)
   alteredColor.style.backgroundColor = alteredHex
-  alteredColorText.innerText = `Altered Color ${alteredHex}`
+  alteredColorText.textContent = `Altered Color ${alteredHex}`
 })
 
 toggleBtn.addEventListener('click', () => {
